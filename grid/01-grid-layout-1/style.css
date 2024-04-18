@@ -25,7 +25,7 @@ html {
 }
 
 .sidebar {
-  background-color: #005B94;
+  background-color: #005b94;
 }
 
 .nav {
@@ -33,7 +33,7 @@ html {
 }
 
 .article {
-  background-color: #7E1DC3;
+  background-color: #7e1dc3;
 }
 
 .footer {
@@ -45,4 +45,40 @@ html {
   font-family: sans-serif;
   color: white;
   text-align: left;
+}
+
+.container {
+  display: grid;
+  /* grid-template-areas:
+    "header header header header"
+    "sidebar nav nav nav"
+    "sidebar article article article"
+    "sidebar article article article"
+    "sidebar article article article"
+    "sidebar article article article"
+    "sidebar article article article"
+    "footer footer footer footer"; */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  gap: 10px;
+}
+.header {
+  /* grid-area: header; */
+  grid-area: 1 / 1 / 2 / -1;
+}
+.sidebar {
+  /* grid-area: sidebar; */
+  grid-area: 2 / 1 / -2 / 2;
+}
+.nav {
+  /* grid-area: nav; */
+  grid-area: 2 / 2 / 3 / -1;
+}
+.article {
+  /* grid-area: article; */
+  grid-area: 3 / 2 / -2 / -1;
+}
+.footer {
+  /* grid-area: footer; */
+  grid-area: -2 / 1 / -1 / -1;
 }
